@@ -1,0 +1,24 @@
+#include <Arduino.h>
+
+
+const int Vpin = 27;
+const int LED = 2;
+float Volt;
+int intVolt;
+int potValue;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED,OUTPUT);
+  pinMode(Vpin, INPUT);
+}
+
+void loop() {
+  
+    Volt = analogRead(Vpin);
+    digitalWrite(LED, HIGH);
+    delay(Volt);
+    digitalWrite(LED, LOW);
+    delay(Volt);
+  }
+
